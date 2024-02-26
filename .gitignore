@@ -52,6 +52,12 @@ ExportedObj/
 *.pdb.meta
 *.mdb.meta
 
+# Files that have specifically been giving me problems for TempoToss
+burst-llvm-16.dll
+dsymutil
+libburst-llvm-10.dylib
+libburst-llvm-16.so
+
 # Unity3D generated file on crash reports
 sysinfo.txt
 
