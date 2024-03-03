@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Blue Divider
+  - Red Divider
+  - Yellow Divider
+  - Green Divider
   layers:
   - Default
   - TransparentFX

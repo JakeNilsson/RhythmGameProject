@@ -122,7 +122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4923841963621311964, guid: c521ea0b34270504ba5e5e475dc5f300, type: 3}
       propertyPath: m_Name
-      value: Note
+      value: Blue_Note
       objectReference: {fileID: 0}
     - target: {fileID: 4923841963621311964, guid: c521ea0b34270504ba5e5e475dc5f300, type: 3}
       propertyPath: m_IsActive
