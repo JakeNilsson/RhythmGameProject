@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - MainMenu
     - Note
     - PauseMenu
+    - SetVolume
     - Spawner
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
@@ -74,6 +75,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: GameManager
     methodName: resumeGame
+  - assembly: Assembly-CSharp
+    fullTypeName: SetVolume
+    methodName: SetLevel
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
@@ -110,6 +114,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 96
       Script: {instanceID: 0}
     - Class: 104
@@ -140,6 +148,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 8230}
     - Class: 114
       Script: {instanceID: 9146}
+    - Class: 114
+      Script: {instanceID: 45578}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -157,6 +167,12 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
     Assets/Scenes/Main Menu.unity:
     - Class: 1
@@ -272,7 +288,7 @@ ScriptsOnlyBuild:
     className: UnityOnMouseExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: c2a8e4b83536440bb91c370a935a6742
+      Hash: 9bcf1cbbb37a7e9383bdc8340928a730
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameManager
@@ -1230,6 +1246,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: e4178a29c239f8e89e18319fce80b22a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SetVolume
   platform: 19
   scenePathNames:
   - Assets/Scenes/Main Menu.unity

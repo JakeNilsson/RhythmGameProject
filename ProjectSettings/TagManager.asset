@@ -8,6 +8,7 @@ TagManager:
   - Red Divider
   - Yellow Divider
   - Green Divider
+  - Spawner
   layers:
   - Default
   - TransparentFX

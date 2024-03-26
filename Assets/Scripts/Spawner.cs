@@ -29,9 +29,7 @@ public class Spawner : MonoBehaviour {
         StopAllCoroutines();
     }
 
-    private IEnumerator Spawn() {
-        yield return new WaitForSeconds(2f);
-
+    public IEnumerator Spawn() {
         while (enabled) {
             GameObject prefab = notePrefabs[Random.Range(0, notePrefabs.Length)];
 

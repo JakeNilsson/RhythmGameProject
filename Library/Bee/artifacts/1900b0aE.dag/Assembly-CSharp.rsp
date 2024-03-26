@@ -378,6 +378,7 @@
 "Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/Note.cs"
 "Assets/Scripts/PauseMenu.cs"
+"Assets/Scripts/SetVolume.cs"
 "Assets/Scripts/Spawner.cs"
 -langversion:9.0
 
