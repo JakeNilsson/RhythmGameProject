@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -128,7 +128,7 @@ MonoBehaviour:
   - {fileID: 17}
   - {fileID: 12}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_MixersTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
-    m_LastClickedID: -18444
+    m_LastClickedID: 24820
     m_ExpandedIDs: 12eb343c
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -430,7 +430,7 @@ MonoBehaviour:
       oldMaxSizes: 
       oldSplitSize: 0
     m_HorizontalSplitter:
-      ID: 4398
+      ID: 80
       splitterInitialOffset: 0
       currentActiveSplitter: -1
       realSizes:
@@ -504,7 +504,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -512,16 +512,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\peej\Desktop\TempoToss
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ae630000
-    m_LastClickedID: 25518
-    m_ExpandedIDs: 00000000a463000000ca9a3bffffff7f
+    m_SelectedIDs: 08640000
+    m_LastClickedID: 25608
+    m_ExpandedIDs: 00000000fa63000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -549,7 +549,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a4630000
+    m_ExpandedIDs: 00000000fa630000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -576,7 +576,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300000a6800005880000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -691,7 +691,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: a29fffffda9fffff4aa1ffff64a1ffff7aa6ffffb2a6ffff22a8ffff3ca8ffff8cacffffc4acffff34aeffff4eaeffffbcb8fffff4b8ffff64baffff7ebaffffd4beffff0cbfffff7cc0ffff96c0ffff74cdffffaccdffff1ccfffff36cfffffa2d3ffffdad3ffff4ad5ffff64d5ffffaedfffffe6dfffff56e1ffff70e1ffff2ee5ffff66e5ffffd6e6fffff0e6ffff80ebffffb8ebffff28edffff42edffff36f1ffff6ef1fffffaf2ffff14f3fffff0f6ffff08fbffff4e61000042620000766a00008e6a00008c6b0000407200005872000056730000247a0000207b0000d4810000ee810000ea820000ae890000c8890000be8a00007e910000969100008c92000078990000909900008e9a0000cca10000e4a10000e2a2000056aa00005cab0000e0b2000000b3000006b40000
+      m_ExpandedIDs: 1afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1086,7 +1086,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: -1.8137532, y: -2.7277024, z: 5.3939595}
     speed: 2
-    m_Value: {x: 960, y: 540, z: 0}
+    m_Value: {x: -1.8137532, y: -2.7277024, z: 5.3939595}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1138,7 +1138,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 2.8763843
     speed: 2
-    m_Value: 1.8129947
+    m_Value: 2.8763843
   m_Ortho:
     m_Target: 1
     speed: 2

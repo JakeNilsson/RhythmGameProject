@@ -19,21 +19,13 @@ ScriptsOnlyBuild:
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
     Unity.2D.Tilemap.Editor.dll:
-    - UnityEditor.Tilemaps.GridBrush
-    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
-    - UnityEditor.Tilemaps.TilemapEditorToolPreferences
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
-    Unity.2D.Tilemap.Extras.Editor.dll:
-    - UnityEditor.Tilemaps.GameObjectBrush
-    - UnityEditor.Tilemaps.GroupBrush
-    - UnityEditor.Tilemaps.LineBrush
-    - UnityEditor.Tilemaps.RandomBrush
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
@@ -100,6 +92,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: BackToMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: endGame
   sceneClasses:
     Assets/Scenes/Game.unity:
     - Class: 1
@@ -137,33 +132,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2012}
     - Class: 114
-      Script: {instanceID: 2878}
+      Script: {instanceID: 2578}
     - Class: 114
-      Script: {instanceID: 3140}
+      Script: {instanceID: 2880}
     - Class: 114
-      Script: {instanceID: 3486}
+      Script: {instanceID: 3142}
     - Class: 114
-      Script: {instanceID: 4932}
+      Script: {instanceID: 3488}
     - Class: 114
-      Script: {instanceID: 5904}
+      Script: {instanceID: 3646}
     - Class: 114
-      Script: {instanceID: 6324}
+      Script: {instanceID: 4936}
     - Class: 114
-      Script: {instanceID: 6694}
+      Script: {instanceID: 5740}
     - Class: 114
-      Script: {instanceID: 7312}
+      Script: {instanceID: 5912}
     - Class: 114
-      Script: {instanceID: 7478}
+      Script: {instanceID: 6332}
     - Class: 114
-      Script: {instanceID: 8230}
+      Script: {instanceID: 6702}
     - Class: 114
-      Script: {instanceID: 9146}
+      Script: {instanceID: 7320}
     - Class: 114
-      Script: {instanceID: 9640}
+      Script: {instanceID: 7486}
     - Class: 114
-      Script: {instanceID: 25576}
+      Script: {instanceID: 8238}
     - Class: 114
-      Script: {instanceID: 25588}
+      Script: {instanceID: 9154}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -208,21 +203,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1604}
     - Class: 114
-      Script: {instanceID: 2878}
+      Script: {instanceID: 2880}
     - Class: 114
-      Script: {instanceID: 3140}
+      Script: {instanceID: 3142}
     - Class: 114
-      Script: {instanceID: 3486}
+      Script: {instanceID: 3488}
     - Class: 114
-      Script: {instanceID: 5904}
+      Script: {instanceID: 5912}
     - Class: 114
-      Script: {instanceID: 6324}
+      Script: {instanceID: 6332}
     - Class: 114
-      Script: {instanceID: 6646}
+      Script: {instanceID: 6654}
     - Class: 114
-      Script: {instanceID: 6694}
+      Script: {instanceID: 6702}
     - Class: 114
-      Script: {instanceID: 7312}
+      Script: {instanceID: 7320}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -366,6 +361,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime
     namespaceName: UnityEngine.U2D.IK
     className: IKManager2D
+  - hash:
+      serializedVersion: 2
+      Hash: aa86d110b71a34bf302e242341b44a5a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AudioSpectrum
   - hash:
       serializedVersion: 2
       Hash: ec59bc56f69d3d13d1fc9d3e087fb56d
@@ -534,6 +535,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnTransformParentChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: a1e8a37b075c4460a18ad589d4fa556b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AudioSyncScale
   - hash:
       serializedVersion: 2
       Hash: d41ab9b5ea92474f9c0a6937a0607ce1
@@ -734,6 +741,12 @@ ScriptsOnlyBuild:
     className: BufferManager
   - hash:
       serializedVersion: 2
+      Hash: e1fc7e61d87869c1b0892adbd04dd061
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AudioSyncer
+  - hash:
+      serializedVersion: 2
       Hash: 0b63f6d3335e11939ce8790b904c8691
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
@@ -780,6 +793,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: AnimationPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: e4178a29c239f8e89e18319fce80b22a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SetVolume
   - hash:
       serializedVersion: 2
       Hash: 47ee34eb8b6021efa0289dbbb17a5a85
@@ -1260,30 +1279,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: e4178a29c239f8e89e18319fce80b22a
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: SetVolume
-  - hash:
-      serializedVersion: 2
-      Hash: aa86d110b71a34bf302e242341b44a5a
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: AudioSpectrum
-  - hash:
-      serializedVersion: 2
-      Hash: e1fc7e61d87869c1b0892adbd04dd061
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: AudioSyncer
-  - hash:
-      serializedVersion: 2
-      Hash: a1e8a37b075c4460a18ad589d4fa556b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: AudioSyncScale
   platform: 19
   scenePathNames:
   - Assets/Scenes/Main Menu.unity

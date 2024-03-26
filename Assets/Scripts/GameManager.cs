@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void NewGame() {
+        Time.timeScale = 1;
         combo = 0;
         comboText.text = "Combo\n" + combo.ToString();
         audioSource.Play();
@@ -88,6 +89,7 @@ public class GameManager : MonoBehaviour
     public void endGame() {
         audioSource.Stop();
         // DisableSpawners();
+        started = false;
         SceneManager.LoadScene("Main Menu"); // TODO: Change to Game Over Scene
     }
 
