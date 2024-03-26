@@ -1,6 +1,8 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AudioSpectrum
+    - AudioSyncScale
     - Blade
     - GameManager
     - MainMenu
@@ -17,13 +19,21 @@ ScriptsOnlyBuild:
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
     Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
+    - UnityEditor.Tilemaps.TilemapEditorToolPreferences
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
+    Unity.2D.Tilemap.Extras.Editor.dll:
+    - UnityEditor.Tilemaps.GameObjectBrush
+    - UnityEditor.Tilemaps.GroupBrush
+    - UnityEditor.Tilemaps.LineBrush
+    - UnityEditor.Tilemaps.RandomBrush
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
@@ -149,7 +159,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9146}
     - Class: 114
-      Script: {instanceID: 45578}
+      Script: {instanceID: 9640}
+    - Class: 114
+      Script: {instanceID: 25576}
+    - Class: 114
+      Script: {instanceID: 25588}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1252,6 +1266,24 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: SetVolume
+  - hash:
+      serializedVersion: 2
+      Hash: aa86d110b71a34bf302e242341b44a5a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AudioSpectrum
+  - hash:
+      serializedVersion: 2
+      Hash: e1fc7e61d87869c1b0892adbd04dd061
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AudioSyncer
+  - hash:
+      serializedVersion: 2
+      Hash: a1e8a37b075c4460a18ad589d4fa556b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AudioSyncScale
   platform: 19
   scenePathNames:
   - Assets/Scenes/Main Menu.unity
