@@ -16,21 +16,13 @@ ScriptsOnlyBuild:
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
     Unity.2D.Tilemap.Editor.dll:
-    - UnityEditor.Tilemaps.GridBrush
-    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
-    - UnityEditor.Tilemaps.TilemapEditorToolPreferences
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
-    Unity.2D.Tilemap.Extras.Editor.dll:
-    - UnityEditor.Tilemaps.GameObjectBrush
-    - UnityEditor.Tilemaps.GroupBrush
-    - UnityEditor.Tilemaps.LineBrush
-    - UnityEditor.Tilemaps.RandomBrush
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
@@ -79,12 +71,18 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.UI
     fullTypeName: UnityEngine.UI.Selectable
     methodName: set_interactable
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: resumeGame
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: UnityEngine.UI
     fullTypeName: UnityEngine.UI.Selectable
     methodName: set_interactable
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: pauseGame
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: BackToMenu
@@ -664,7 +662,7 @@ ScriptsOnlyBuild:
     className: DictionaryAsset
   - hash:
       serializedVersion: 2
-      Hash: d641f94a417d67face140a21ddc583c7
+      Hash: bfb113690dcc54c824693d51d5d2ed0b
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Spawner

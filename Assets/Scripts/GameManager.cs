@@ -16,6 +16,14 @@ public class GameManager : MonoBehaviour
         comboText.text = "Combo\n" + combo.ToString();
     }
 
+    public void pauseGame() {
+        Time.timeScale = 0;
+    }
+
+    public void resumeGame() {
+        Time.timeScale = 1;
+    }
+
     public void IncreaseCombo(int combo) {
         this.combo += combo;
         comboText.text = "Combo\n" + this.combo.ToString();

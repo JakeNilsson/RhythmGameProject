@@ -13,10 +13,9 @@ public class Note : MonoBehaviour
 
     private Camera mainCamera;
 
-    private bool beenAboveScreen = false;
-    private bool aboveScreen = false;
-
     public int points = 1;
+
+    private bool isOffScreen;
 
     private void Awake() {
         noteRigidbody = GetComponent<Rigidbody2D>();
@@ -25,23 +24,22 @@ public class Note : MonoBehaviour
     }
 
     private void Update() {
-        Vector3 pos = mainCamera.WorldToScreenPoint(transform.position);
-
-        if (!beenAboveScreen) {
-            beenAboveScreen = pos.y > -50;
-
-            if (!beenAboveScreen) return;
+        // Destroy the note if it goes off the screen, but it starts below the screen, so we need to check if it goes above the screen
+        if (transform.position.y > mainCamera.ViewportToWorldPoint(Vector3.zero).y && !isOffScreen) {
+            isOffScreen = true;
         }
 
-        aboveScreen = pos.y > -50;
-
-        if (!aboveScreen) {
-            if (!sliced.activeSelf)
+        if (transform.position.y < mainCamera.ViewportToWorldPoint(Vector3.zero).y && isOffScreen) {
+            // if the note is still whole, reset the combo
+            if (whole.activeSelf) {
                 FindObjectOfType<GameManager>().ResetCombo();
-
-            Destroy(this.gameObject);
+            }
+            
+            Destroy(gameObject);    // Destroy the note
         }
     }
+
+
 
     private void Slice(Vector3 direction, Vector3 position, float force) {
         FindObjectOfType<GameManager>().IncreaseCombo(points);

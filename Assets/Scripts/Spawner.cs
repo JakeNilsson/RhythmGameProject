@@ -14,10 +14,8 @@ public class Spawner : MonoBehaviour {
     public float minAngle = -15f;
     public float maxAngle = 15f;
 
-    public float minForce = 10f;
-    public float maxForce = 15f;
-
-    //public float maxLifetime = 5f;
+    private float minForce = 10f;
+    private float maxForce = 15f;
 
     private void Awake() {
         spawnArea = GetComponent<Collider2D>();
@@ -47,7 +45,6 @@ public class Spawner : MonoBehaviour {
             Quaternion rotation = Quaternion.Euler(0f, 0f, Random.Range(minAngle, maxAngle));
 
             GameObject note = Instantiate(prefab, position, rotation, this.transform.parent.GameObject().transform);
-            //Destroy(note, maxLifetime);
 
             if (note.name.Contains("Blue")) {
                 minForce = 14;

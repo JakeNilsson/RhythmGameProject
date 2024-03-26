@@ -830,7 +830,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.5643e-10, y: 291.65}
+  m_AnchoredPosition: {x: 0, y: 291.65}
   m_SizeDelta: {x: 252.759, y: 64.6434}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &487712564
@@ -893,6 +893,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
         m_MethodName: set_interactable
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1632911382}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: resumeGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1379,8 +1391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d41360d234f52409866685a630b6d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSliceVelocity: 0.01
-  sliceForce: 2.5
+  minSliceVelocity: 0.05
+  sliceForce: 2
 --- !u!58 &629722418
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1415,7 +1427,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 20
+  m_Radius: 5
 --- !u!1 &725294079
 GameObject:
   m_ObjectHideFlags: 0
@@ -2858,12 +2870,10 @@ MonoBehaviour:
   - {fileID: 2204050786410081359, guid: 53a3f2f4eddc0d043b96df98e3927e1d, type: 3}
   - {fileID: 2204050786410081359, guid: c0990c8065cabef41baef998dc4bb76e, type: 3}
   - {fileID: 2204050786410081359, guid: 78c91cf785cadee49904e1fce013ece2, type: 3}
-  minSpawnDelay: 2
-  maxSpawnDelay: 5
+  minSpawnDelay: 0.5
+  maxSpawnDelay: 2.5
   minAngle: -15
   maxAngle: 15
-  minForce: 10
-  maxForce: 15
 --- !u!61 &1532558267
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3015,6 +3025,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1632911382}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: pauseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1550422650
 MonoBehaviour:
@@ -3926,7 +3948,7 @@ TrailRenderer:
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.4
+    widthMultiplier: 0.05
     widthCurve:
       serializedVersion: 2
       m_Curve:
