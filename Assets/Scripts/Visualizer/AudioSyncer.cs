@@ -18,7 +18,7 @@ public class AudioSyncer : MonoBehaviour
         OnUpdate();
     }
 
-    public virtual void onBeat() {
+    public virtual void OnBeat() {
         //Debug.Log("Beat");
         m_timer = 0;
         m_isBeat = true;
@@ -33,7 +33,7 @@ public class AudioSyncer : MonoBehaviour
         {
             if (m_timer > timeToBeat)
             {
-                onBeat();
+                OnBeat();
             }
         }
 
@@ -41,7 +41,7 @@ public class AudioSyncer : MonoBehaviour
         {
             if (m_timer > timeToBeat)
             {
-                onBeat();
+                OnBeat();
             }
         }
 

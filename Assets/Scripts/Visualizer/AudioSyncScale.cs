@@ -15,9 +15,9 @@ public class AudioSyncScale : AudioSyncer
         transform.localScale = Vector3.Lerp(transform.localScale, restScale, restSmoothTime * Time.deltaTime);
     }
 
-    public override void onBeat()
+    public override void OnBeat()
     {
-        base.onBeat();
+        base.OnBeat();
 
         StopCoroutine("MoveToScale");
         StartCoroutine("MoveToScale", beatScale);

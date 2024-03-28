@@ -16,6 +16,7 @@ public class Note : MonoBehaviour
     public int points = 1;
 
     private bool isOffScreen;
+    private bool slicable = false;
 
     private void Awake() {
         noteRigidbody = GetComponent<Rigidbody2D>();
@@ -54,6 +55,15 @@ public class Note : MonoBehaviour
 
         Rigidbody2D[] slices = sliced.GetComponentsInChildren<Rigidbody2D>();
 
+        // Calculate the center height of the circle
+       // float circleCenterHeight = transform.position.y;
+
+        // Calculate the center height of the box
+        //float boxCenterHeight = boxCollider.bounds.center.y;
+
+        // Calculate the distance between the center heights
+        //float centerHeightDistance = Mathf.Abs(circleCenterHeight - boxCenterHeight);
+
         foreach (Rigidbody2D slice in slices) {
             slice.velocity = noteRigidbody.velocity;
             Vector2 dir2 = new() {
@@ -72,9 +82,19 @@ public class Note : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) {
+        if (other.CompareTag(this.tag)){
+            slicable = true;
+        }
+        if (other.CompareTag("Player") && slicable == true) {
             Blade blade = other.GetComponent<Blade>();
             Slice(blade.direction, blade.transform.position, blade.sliceForce);
+         }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D other) {
+        if (other.CompareTag(this.tag)){
+            slicable = false;
         }
     }
 }
