@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public Text comboText;
 
-    public AudioClip audioClip;
+    public AudioClip[] audioClips;
 
     public GameObject[] spawners;
 
@@ -28,8 +28,8 @@ public class GameManager : MonoBehaviour
         if (comboText == null) {
             Debug.LogError("Combo Text is not set in the GameManager");
         }
-        else if (audioClip == null) {
-            Debug.LogError("Audio Clip is not set in the GameManager");
+        else if (audioClips.Length == 0) {
+            Debug.LogError("Audio Clips are not set in the GameManager");
         }
 
         audioSource = FindObjectOfType<AudioSource>();
@@ -37,13 +37,14 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Audio Source is not found in the GameManager");
         }
         else {
-            audioSource.clip = audioClip;
+            AudioClip audioClip = audioClips[GridManager.currentLevel - 1];
+            audioSource.clip = audioClips[GridManager.currentLevel - 1];
             audioSource.loop = false;
             audioSource.playOnAwake = false;
             songLength = audioClip.length;
         }
 
-        if (comboText != null && audioClip != null && audioSource != null && spawners.Length > 0) {
+        if (comboText != null && audioClips.Length > 0 && audioSource != null && spawners.Length > 0) {
             NewGame();
         }
     }

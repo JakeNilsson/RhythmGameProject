@@ -3984,7 +3984,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comboText: {fileID: 558143121}
-  audioClip: {fileID: 8300000, guid: df728409641828b4eb94ab51175c6191, type: 3}
+  audioClips:
+  - {fileID: 8300000, guid: df728409641828b4eb94ab51175c6191, type: 3}
   spawners:
   - {fileID: 1532558263}
 --- !u!1 &1643608914

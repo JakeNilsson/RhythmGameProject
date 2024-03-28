@@ -323,6 +323,7 @@
 "Assets/Scripts/AudioSyncScale.cs"
 "Assets/Scripts/Blade.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/GridManager.cs"
 "Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/Note.cs"
 "Assets/Scripts/PauseMenu.cs"

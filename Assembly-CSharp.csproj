@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\AudioSpectrum.cs" />
     <Compile Include="Assets\Scripts\AudioSyncScale.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
+    <Compile Include="Assets\Scripts\GridManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\AudioSyncer.cs" />

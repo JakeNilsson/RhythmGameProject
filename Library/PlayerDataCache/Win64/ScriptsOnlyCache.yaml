@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - AudioSyncScale
     - Blade
     - GameManager
+    - GridManager
     - MainMenu
     - Note
     - PauseMenu
@@ -19,13 +20,21 @@ ScriptsOnlyBuild:
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
     Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
+    - UnityEditor.Tilemaps.TilemapEditorToolPreferences
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
+    Unity.2D.Tilemap.Extras.Editor.dll:
+    - UnityEditor.Tilemaps.GameObjectBrush
+    - UnityEditor.Tilemaps.GroupBrush
+    - UnityEditor.Tilemaps.LineBrush
+    - UnityEditor.Tilemaps.RandomBrush
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
@@ -38,6 +47,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.Image
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
@@ -46,6 +56,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
     - UnityEngine.Events.PersistentListenerMode
+    - UnityEngine.RectOffset
     UnityEngine.UI:
     - UnityEngine.UI.AnimationTriggers
     - UnityEngine.UI.Button/ButtonClickedEvent
@@ -67,7 +78,7 @@ ScriptsOnlyBuild:
     methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: MainMenu
-    methodName: PlayGame
+    methodName: OpenLevelSelect
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
@@ -128,17 +139,17 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1604}
+      Script: {instanceID: 1552}
     - Class: 114
-      Script: {instanceID: 2012}
+      Script: {instanceID: 1606}
     - Class: 114
-      Script: {instanceID: 2578}
+      Script: {instanceID: 2014}
     - Class: 114
-      Script: {instanceID: 2880}
+      Script: {instanceID: 2580}
     - Class: 114
-      Script: {instanceID: 3142}
+      Script: {instanceID: 2882}
     - Class: 114
-      Script: {instanceID: 3488}
+      Script: {instanceID: 3144}
     - Class: 114
       Script: {instanceID: 3646}
     - Class: 114
@@ -183,6 +194,57 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 245
       Script: {instanceID: 0}
+    Assets/Scenes/Level Select.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1552}
+    - Class: 114
+      Script: {instanceID: 1606}
+    - Class: 114
+      Script: {instanceID: 2882}
+    - Class: 114
+      Script: {instanceID: 3144}
+    - Class: 114
+      Script: {instanceID: 5574}
+    - Class: 114
+      Script: {instanceID: 6332}
+    - Class: 114
+      Script: {instanceID: 6702}
+    - Class: 114
+      Script: {instanceID: 7320}
+    - Class: 114
+      Script: {instanceID: 26306}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/Main Menu.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -201,13 +263,13 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1604}
+      Script: {instanceID: 1552}
     - Class: 114
-      Script: {instanceID: 2880}
+      Script: {instanceID: 1606}
     - Class: 114
-      Script: {instanceID: 3142}
+      Script: {instanceID: 2882}
     - Class: 114
-      Script: {instanceID: 3488}
+      Script: {instanceID: 3144}
     - Class: 114
       Script: {instanceID: 5912}
     - Class: 114
@@ -235,6 +297,12 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 915204dac8acad99f076d6e72ada0a0f
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: Button
   - hash:
       serializedVersion: 2
       Hash: 55060a7bf226ac385ce19ebd450f199f
@@ -297,7 +365,7 @@ ScriptsOnlyBuild:
     className: UnityOnMouseExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 9bcf1cbbb37a7e9383bdc8340928a730
+      Hash: 3a9bbd08b2ec61e79822a1e3fef2ae4c
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameManager
@@ -499,12 +567,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.Animation.Runtime
     namespaceName: UnityEngine.U2D.Animation
     className: Bone
-  - hash:
-      serializedVersion: 2
-      Hash: 915204dac8acad99f076d6e72ada0a0f
-    assemblyName: UnityEngine.UI
-    namespaceName: UnityEngine.UI
-    className: Button
   - hash:
       serializedVersion: 2
       Hash: d90629714fa6b0145fcaffc87f5c6559
@@ -1279,8 +1341,15 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 304f75e388c4cf36682ba4f7bbef8632
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GridManager
   platform: 19
   scenePathNames:
   - Assets/Scenes/Main Menu.unity
+  - Assets/Scenes/Level Select.unity
   - Assets/Scenes/Game.unity
   playerPath: C:/Users/peej/Desktop/build/Tempo Toss.exe
