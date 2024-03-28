@@ -3986,6 +3986,7 @@ MonoBehaviour:
   comboText: {fileID: 558143121}
   audioClips:
   - {fileID: 8300000, guid: df728409641828b4eb94ab51175c6191, type: 3}
+  - {fileID: 8300000, guid: f992ecff90b10be46a9e481254e4cca4, type: 3}
   spawners:
   - {fileID: 1532558263}
 --- !u!1 &1643608914

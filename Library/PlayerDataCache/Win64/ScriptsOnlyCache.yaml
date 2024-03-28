@@ -14,7 +14,6 @@ ScriptsOnlyBuild:
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Animation.Runtime.dll:
-    - UnityEngine.U2D.Animation.BufferManager
     - UnityEngine.U2D.Animation.SpriteSkinComposite
     - UnityEngine.U2D.Animation.SpriteSkinUpdateHelper
     Unity.2D.IK.Editor.dll:
@@ -147,29 +146,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2580}
     - Class: 114
-      Script: {instanceID: 2882}
+      Script: {instanceID: 2884}
     - Class: 114
-      Script: {instanceID: 3144}
+      Script: {instanceID: 3146}
     - Class: 114
-      Script: {instanceID: 3646}
+      Script: {instanceID: 3648}
     - Class: 114
-      Script: {instanceID: 4936}
+      Script: {instanceID: 4938}
     - Class: 114
-      Script: {instanceID: 5740}
+      Script: {instanceID: 5742}
     - Class: 114
-      Script: {instanceID: 5912}
+      Script: {instanceID: 5914}
     - Class: 114
-      Script: {instanceID: 6332}
+      Script: {instanceID: 6334}
     - Class: 114
-      Script: {instanceID: 6702}
+      Script: {instanceID: 6704}
     - Class: 114
-      Script: {instanceID: 7320}
+      Script: {instanceID: 7322}
     - Class: 114
-      Script: {instanceID: 7486}
+      Script: {instanceID: 7488}
     - Class: 114
-      Script: {instanceID: 8238}
+      Script: {instanceID: 8240}
     - Class: 114
-      Script: {instanceID: 9154}
+      Script: {instanceID: 9156}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -216,19 +215,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1606}
     - Class: 114
-      Script: {instanceID: 2882}
+      Script: {instanceID: 2802}
     - Class: 114
-      Script: {instanceID: 3144}
+      Script: {instanceID: 2884}
     - Class: 114
-      Script: {instanceID: 5574}
+      Script: {instanceID: 3146}
     - Class: 114
-      Script: {instanceID: 6332}
+      Script: {instanceID: 5576}
     - Class: 114
-      Script: {instanceID: 6702}
+      Script: {instanceID: 6334}
     - Class: 114
-      Script: {instanceID: 7320}
+      Script: {instanceID: 6704}
     - Class: 114
-      Script: {instanceID: 26306}
+      Script: {instanceID: 7322}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -267,19 +266,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1606}
     - Class: 114
-      Script: {instanceID: 2882}
+      Script: {instanceID: 2884}
     - Class: 114
-      Script: {instanceID: 3144}
+      Script: {instanceID: 3146}
     - Class: 114
-      Script: {instanceID: 5912}
+      Script: {instanceID: 5914}
     - Class: 114
-      Script: {instanceID: 6332}
+      Script: {instanceID: 6334}
     - Class: 114
-      Script: {instanceID: 6654}
+      Script: {instanceID: 6656}
     - Class: 114
-      Script: {instanceID: 6702}
+      Script: {instanceID: 6704}
     - Class: 114
-      Script: {instanceID: 7320}
+      Script: {instanceID: 7322}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -447,6 +446,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnBecameVisibleMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 304f75e388c4cf36682ba4f7bbef8632
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GridManager
   - hash:
       serializedVersion: 2
       Hash: e987953190eb4c12cf19df790566dc2c
@@ -1341,12 +1346,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 304f75e388c4cf36682ba4f7bbef8632
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: GridManager
   platform: 19
   scenePathNames:
   - Assets/Scenes/Main Menu.unity
