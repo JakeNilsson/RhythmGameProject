@@ -55,6 +55,15 @@ public class Note : MonoBehaviour
 
         Rigidbody2D[] slices = sliced.GetComponentsInChildren<Rigidbody2D>();
 
+        // Calculate the center height of the circle
+       // float circleCenterHeight = transform.position.y;
+
+        // Calculate the center height of the box
+        //float boxCenterHeight = boxCollider.bounds.center.y;
+
+        // Calculate the distance between the center heights
+        //float centerHeightDistance = Mathf.Abs(circleCenterHeight - boxCenterHeight);
+
         foreach (Rigidbody2D slice in slices) {
             slice.velocity = noteRigidbody.velocity;
             Vector2 dir2 = new() {

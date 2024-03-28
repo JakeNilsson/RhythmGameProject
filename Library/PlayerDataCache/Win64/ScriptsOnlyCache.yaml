@@ -11,6 +11,7 @@ ScriptsOnlyBuild:
     - PauseMenu
     - SetVolume
     - Spawner
+    - SyncColor
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Animation.Runtime.dll:
@@ -142,37 +143,39 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1552}
+      Script: {instanceID: 1604}
     - Class: 114
-      Script: {instanceID: 1606}
+      Script: {instanceID: 2012}
     - Class: 114
-      Script: {instanceID: 2014}
+      Script: {instanceID: 2878}
     - Class: 114
-      Script: {instanceID: 2580}
+      Script: {instanceID: 3140}
     - Class: 114
-      Script: {instanceID: 2884}
+      Script: {instanceID: 3486}
     - Class: 114
-      Script: {instanceID: 3146}
+      Script: {instanceID: 4932}
     - Class: 114
-      Script: {instanceID: 3648}
+      Script: {instanceID: 5904}
     - Class: 114
-      Script: {instanceID: 4938}
+      Script: {instanceID: 6324}
     - Class: 114
-      Script: {instanceID: 5742}
+      Script: {instanceID: 6694}
     - Class: 114
-      Script: {instanceID: 5914}
+      Script: {instanceID: 7312}
     - Class: 114
-      Script: {instanceID: 6334}
+      Script: {instanceID: 7478}
     - Class: 114
-      Script: {instanceID: 6704}
+      Script: {instanceID: 8230}
     - Class: 114
-      Script: {instanceID: 7322}
+      Script: {instanceID: 9146}
     - Class: 114
-      Script: {instanceID: 7488}
+      Script: {instanceID: 9652}
     - Class: 114
-      Script: {instanceID: 8240}
+      Script: {instanceID: 9660}
     - Class: 114
-      Script: {instanceID: 9156}
+      Script: {instanceID: 9664}
+    - Class: 114
+      Script: {instanceID: 29992}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -215,23 +218,23 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1552}
+      Script: {instanceID: 1604}
     - Class: 114
-      Script: {instanceID: 1606}
+      Script: {instanceID: 2878}
     - Class: 114
-      Script: {instanceID: 2802}
+      Script: {instanceID: 3140}
     - Class: 114
-      Script: {instanceID: 2884}
+      Script: {instanceID: 3486}
     - Class: 114
-      Script: {instanceID: 3146}
+      Script: {instanceID: 5568}
     - Class: 114
-      Script: {instanceID: 5576}
+      Script: {instanceID: 6324}
     - Class: 114
-      Script: {instanceID: 6334}
+      Script: {instanceID: 6694}
     - Class: 114
-      Script: {instanceID: 6704}
+      Script: {instanceID: 7312}
     - Class: 114
-      Script: {instanceID: 7322}
+      Script: {instanceID: 9668}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -266,27 +269,27 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1552}
+      Script: {instanceID: 1604}
     - Class: 114
-      Script: {instanceID: 1606}
+      Script: {instanceID: 2878}
     - Class: 114
-      Script: {instanceID: 2884}
+      Script: {instanceID: 3140}
     - Class: 114
-      Script: {instanceID: 3146}
+      Script: {instanceID: 3486}
     - Class: 114
-      Script: {instanceID: 5742}
+      Script: {instanceID: 5904}
     - Class: 114
-      Script: {instanceID: 5914}
+      Script: {instanceID: 6324}
     - Class: 114
-      Script: {instanceID: 6334}
+      Script: {instanceID: 6646}
     - Class: 114
-      Script: {instanceID: 6656}
+      Script: {instanceID: 6694}
     - Class: 114
-      Script: {instanceID: 6704}
+      Script: {instanceID: 7312}
     - Class: 114
-      Script: {instanceID: 7322}
+      Script: {instanceID: 9146}
     - Class: 114
-      Script: {instanceID: 9156}
+      Script: {instanceID: 9660}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -310,12 +313,6 @@ ScriptsOnlyBuild:
     - Class: 245
       Script: {instanceID: 0}
   scriptHashData:
-  - hash:
-      serializedVersion: 2
-      Hash: 915204dac8acad99f076d6e72ada0a0f
-    assemblyName: UnityEngine.UI
-    namespaceName: UnityEngine.UI
-    className: Button
   - hash:
       serializedVersion: 2
       Hash: 55060a7bf226ac385ce19ebd450f199f
@@ -444,12 +441,6 @@ ScriptsOnlyBuild:
     className: IKManager2D
   - hash:
       serializedVersion: 2
-      Hash: aa86d110b71a34bf302e242341b44a5a
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: AudioSpectrum
-  - hash:
-      serializedVersion: 2
       Hash: ec59bc56f69d3d13d1fc9d3e087fb56d
     assemblyName: Unity.2D.Animation.Runtime
     namespaceName: UnityEngine.U2D.Animation
@@ -460,12 +451,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnBecameVisibleMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 304f75e388c4cf36682ba4f7bbef8632
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: GridManager
   - hash:
       serializedVersion: 2
       Hash: e987953190eb4c12cf19df790566dc2c
@@ -588,6 +573,12 @@ ScriptsOnlyBuild:
     className: Bone
   - hash:
       serializedVersion: 2
+      Hash: 915204dac8acad99f076d6e72ada0a0f
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: Button
+  - hash:
+      serializedVersion: 2
       Hash: d90629714fa6b0145fcaffc87f5c6559
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -616,12 +607,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnTransformParentChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: a1e8a37b075c4460a18ad589d4fa556b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: AudioSyncScale
   - hash:
       serializedVersion: 2
       Hash: d41ab9b5ea92474f9c0a6937a0607ce1
@@ -822,12 +807,6 @@ ScriptsOnlyBuild:
     className: BufferManager
   - hash:
       serializedVersion: 2
-      Hash: e1fc7e61d87869c1b0892adbd04dd061
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: AudioSyncer
-  - hash:
-      serializedVersion: 2
       Hash: 0b63f6d3335e11939ce8790b904c8691
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
@@ -874,12 +853,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: AnimationPlayableAsset
-  - hash:
-      serializedVersion: 2
-      Hash: 7a390b47755b455ba4f2c644cd2fea80
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: SetVolume
   - hash:
       serializedVersion: 2
       Hash: 47ee34eb8b6021efa0289dbbb17a5a85
@@ -1360,9 +1333,51 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: aa86d110b71a34bf302e242341b44a5a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AudioSpectrum
+  - hash:
+      serializedVersion: 2
+      Hash: e1fc7e61d87869c1b0892adbd04dd061
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AudioSyncer
+  - hash:
+      serializedVersion: 2
+      Hash: 7a390b47755b455ba4f2c644cd2fea80
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SetVolume
+  - hash:
+      serializedVersion: 2
+      Hash: a1e8a37b075c4460a18ad589d4fa556b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AudioSyncScale
+  - hash:
+      serializedVersion: 2
+      Hash: 304f75e388c4cf36682ba4f7bbef8632
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GridManager
+  - hash:
+      serializedVersion: 2
+      Hash: 4cd1d24731e43872048c37b1e4ac9d8c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SyncColor
+  - hash:
+      serializedVersion: 2
+      Hash: 530b447539154cef4f100f3c87f95131
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Scoring
   platform: 19
   scenePathNames:
   - Assets/Scenes/Main Menu.unity
   - Assets/Scenes/Level Select.unity
   - Assets/Scenes/Game.unity
-  playerPath: C:/Users/peej/Desktop/build/Tempo Toss.exe
+  playerPath: C:/Users/Brian/Desktop/TempoToss Build/Tempo Toss.exe

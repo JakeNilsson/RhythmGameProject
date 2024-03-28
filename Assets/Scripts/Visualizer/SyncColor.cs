@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SyncColor : Syncer
+public class SyncColor : AudioSyncer
 {
     public Color[] beatColors;
     public Color restColor;
@@ -18,7 +18,7 @@ public class SyncColor : Syncer
     public override void OnUpdate()
     {
         base.OnUpdate();
-        if (isBeat) return;
+        if (m_isBeat) return;
         block.color = Color.Lerp(block.color, restColor, restSmoothTime * Time.deltaTime);
     }
 
@@ -36,7 +36,7 @@ public class SyncColor : Syncer
 
             yield return null;
         }
-        isBeat = false;
+        m_isBeat = false;
     }
 
     public override void OnBeat()

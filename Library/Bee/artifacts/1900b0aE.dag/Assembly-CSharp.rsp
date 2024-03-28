@@ -380,12 +380,13 @@
 "Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/Note.cs"
 "Assets/Scripts/PauseMenu.cs"
+"Assets/Scripts/Scoring.cs"
 "Assets/Scripts/SetVolume.cs"
 "Assets/Scripts/Spawner.cs"
-"Assets/Scripts/Visualizer/Spectrum.cs"
+"Assets/Scripts/Visualizer/AudioSpectrum.cs"
+"Assets/Scripts/Visualizer/AudioSyncer.cs"
+"Assets/Scripts/Visualizer/AudioSyncScale.cs"
 "Assets/Scripts/Visualizer/SyncColor.cs"
-"Assets/Scripts/Visualizer/Syncer.cs"
-"Assets/Scripts/Visualizer/SyncScale.cs"
 -langversion:9.0
 
 /deterministic
