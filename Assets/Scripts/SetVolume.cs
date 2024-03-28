@@ -3,17 +3,27 @@ using UnityEngine.Audio;
 
 public class SetVolume : MonoBehaviour
 {
-    public AudioMixer audioMixer;
+    // make this a singleton class
+    public static SetVolume instance;
 
-    public void SetLevel(float sliderValue)
+    public AudioMixer songMixer;
+
+    private void Awake()
     {
-        if (sliderValue == 0)
+        if (instance == null)
         {
-            audioMixer.SetFloat("Volume", -80);
-        }
-        else
-        {
-            audioMixer.SetFloat("Volume", Mathf.Log10(sliderValue) * 20);
+            instance = this;
         }
     }
+
+    public void SetSongVolume(float sliderValue)
+    {
+        float volume = sliderValue != 0 ? Mathf.Log10(sliderValue) * 20 : -80;
+
+        songMixer.SetFloat("Volume", volume);
+
+        PlayerPrefs.SetFloat("Volume", sliderValue);
+    }
+
+    
 }

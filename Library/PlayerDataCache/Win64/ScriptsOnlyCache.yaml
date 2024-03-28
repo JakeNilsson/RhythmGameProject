@@ -14,6 +14,7 @@ ScriptsOnlyBuild:
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Animation.Runtime.dll:
+    - UnityEngine.U2D.Animation.BufferManager
     - UnityEngine.U2D.Animation.SpriteSkinComposite
     - UnityEngine.U2D.Animation.SpriteSkinUpdateHelper
     Unity.2D.IK.Editor.dll:
@@ -72,6 +73,9 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: SetVolume
+    methodName: SetSongVolume
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
@@ -89,7 +93,7 @@ ScriptsOnlyBuild:
     methodName: resumeGame
   - assembly: Assembly-CSharp
     fullTypeName: SetVolume
-    methodName: SetLevel
+    methodName: SetSongVolume
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
@@ -270,6 +274,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3146}
     - Class: 114
+      Script: {instanceID: 5742}
+    - Class: 114
       Script: {instanceID: 5914}
     - Class: 114
       Script: {instanceID: 6334}
@@ -279,6 +285,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 6704}
     - Class: 114
       Script: {instanceID: 7322}
+    - Class: 114
+      Script: {instanceID: 9156}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -294,6 +302,12 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -862,7 +876,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: e4178a29c239f8e89e18319fce80b22a
+      Hash: 7a390b47755b455ba4f2c644cd2fea80
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: SetVolume
@@ -1294,7 +1308,7 @@ ScriptsOnlyBuild:
     className: SpriteLibrarySourceAsset
   - hash:
       serializedVersion: 2
-      Hash: 2a0c988f68e3311d5a21b2ee8ea7ac31
+      Hash: 2a3cedb3bd2290990e09a78968395868
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PauseMenu

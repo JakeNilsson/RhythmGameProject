@@ -2354,7 +2354,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 982019992}
         m_TargetAssemblyTypeName: SetVolume, Assembly-CSharp
-        m_MethodName: SetLevel
+        m_MethodName: SetSongVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2376,7 +2376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3eb9378fc3a3e40bb1d695d84b0f1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 7aabd657400d7c249b8efa9adb0a5573, type: 2}
+  songMixer: {fileID: 24100000, guid: 7aabd657400d7c249b8efa9adb0a5573, type: 2}
 --- !u!1 &1028389342
 GameObject:
   m_ObjectHideFlags: 0
@@ -4715,6 +4715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83e7bfc81d5ca9429573b7a32ed0e6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  volumeSlider: {fileID: 982019989}
 --- !u!1 &1879883824
 GameObject:
   m_ObjectHideFlags: 0
