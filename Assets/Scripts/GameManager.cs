@@ -5,12 +5,14 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Text comboText;
+    public Text scoreText;
 
     public AudioClip[] audioClips;
 
     public GameObject[] spawners;
 
     private int combo;
+    private int score;
 
     private AudioSource audioSource;
 
@@ -21,12 +23,17 @@ public class GameManager : MonoBehaviour
     
 
     private void Start() {
+
         if (spawners.Length == 0) {
             Debug.LogError("Spawners are not set in the GameManager");
         }
 
         if (comboText == null) {
             Debug.LogError("Combo Text is not set in the GameManager");
+        }
+
+        if (scoreText == null) {
+            Debug.LogError("Score Text is not set in the GameManager");
         }
         else if (audioClips.Length == 0) {
             Debug.LogError("Audio Clips are not set in the GameManager");
@@ -52,7 +59,9 @@ public class GameManager : MonoBehaviour
     private void NewGame() {
         Time.timeScale = 1;
         combo = 0;
+        score = 0;
         comboText.text = "Combo\n" + combo.ToString();
+        scoreText.text = "Score\n" + score.ToString();
         audioSource.Play();
         // wait 3 seconds and then enable the spawners
         // Invoke("EnableSpawners", 3f);
@@ -102,5 +111,10 @@ public class GameManager : MonoBehaviour
     public void ResetCombo() {
         combo = 0;
         comboText.text = "Combo\n" + combo.ToString();
+    }
+
+    public void IncreaseScore(int score) {
+        this.score += score;
+        scoreText.text = "Score\n" + this.score.ToString();
     }
 }

@@ -9,6 +9,10 @@ TagManager:
   - Yellow Divider
   - Green Divider
   - Spawner
+  - Blue Perfect
+  - Red Perfect
+  - Yellow Perfect
+  - Green Perfect
   layers:
   - Default
   - TransparentFX

@@ -13,10 +13,11 @@ public class Note : MonoBehaviour
 
     private Camera mainCamera;
 
-    public int points = 1;
+    public int points = 10;
 
     private bool isOffScreen;
     private bool slicable = false;
+    private string type;
 
     private void Awake() {
         noteRigidbody = GetComponent<Rigidbody2D>();
@@ -43,7 +44,9 @@ public class Note : MonoBehaviour
 
 
     private void Slice(Vector3 direction, Vector3 position, float force) {
-        FindObjectOfType<GameManager>().IncreaseCombo(points);
+        FindObjectOfType<GameManager>().IncreaseScore(points);
+        FindObjectOfType<GameManager>().IncreaseCombo(1);
+        
         
         whole.SetActive(false);
         sliced.SetActive(true);
@@ -54,15 +57,7 @@ public class Note : MonoBehaviour
         sliced.transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
         Rigidbody2D[] slices = sliced.GetComponentsInChildren<Rigidbody2D>();
-
-        // Calculate the center height of the circle
-       // float circleCenterHeight = transform.position.y;
-
-        // Calculate the center height of the box
-        //float boxCenterHeight = boxCollider.bounds.center.y;
-
-        // Calculate the distance between the center heights
-        //float centerHeightDistance = Mathf.Abs(circleCenterHeight - boxCenterHeight);
+        
 
         foreach (Rigidbody2D slice in slices) {
             slice.velocity = noteRigidbody.velocity;
@@ -82,8 +77,30 @@ public class Note : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        switch (this.tag){
+        case "Blue Divider":
+            type = "Blue Perfect";
+            break;
+        case "Red Divider":
+            type = "Red Perfect";
+            break;
+        case "Yellow Divider":
+            type = "Yellow Perfect";
+            break;
+        case "Green Divider":
+            type = "Green Perfect";
+            break;
+        default:
+            Debug.LogError("Default Error");
+            break;
+        }
+
         if (other.CompareTag(this.tag)){
             slicable = true;
+        }
+
+        if (other.CompareTag(type)){
+            points = 30;
         }
         if (other.CompareTag("Player") && slicable == true) {
             Blade blade = other.GetComponent<Blade>();
@@ -93,6 +110,10 @@ public class Note : MonoBehaviour
     }
 
     private void OnTriggerExit2D(Collider2D other) {
+        if (other.CompareTag(type)) {
+            points = 10;
+        }
+
         if (other.CompareTag(this.tag)){
             slicable = false;
         }
