@@ -7,10 +7,12 @@ public class Note : MonoBehaviour
 {
     public GameObject whole;
     public GameObject sliced;
+    public GameObject perfIcon;
+    public GameObject goodIcon;
+    public GameObject missIcon;
 
     private Rigidbody2D noteRigidbody;
     private Collider2D noteCollider;
-
     private Camera mainCamera;
 
     public int points = 10;
@@ -23,6 +25,10 @@ public class Note : MonoBehaviour
         noteRigidbody = GetComponent<Rigidbody2D>();
         noteCollider = GetComponent<Collider2D>();
         mainCamera = Camera.main;
+
+        perfIcon.SetActive(false);
+        goodIcon.SetActive(false);
+        missIcon.SetActive(false);
     }
 
     private void Update() {
@@ -43,7 +49,7 @@ public class Note : MonoBehaviour
 
 
 
-    private void Slice(Vector3 direction, Vector3 position, float force) {
+    private void Slice(Vector3 direction, Vector3 position, float force, GameObject icon) {
         FindObjectOfType<GameManager>().IncreaseScore(points);
         FindObjectOfType<GameManager>().IncreaseCombo(1);
         
@@ -73,21 +79,25 @@ public class Note : MonoBehaviour
 
             slice.AddForceAtPosition(dir2 * force, pos2, ForceMode2D.Impulse);
         }
+        GameObject iconType = Instantiate(icon, position, Quaternion.identity);
+        iconType.SetActive(true);
+        Destroy(iconType, 2f);
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         switch (this.tag){
-        case "Blue Divider":
+        case "Blue Note":
             type = "Blue Perfect";
             break;
-        case "Red Divider":
+        case "Red Note":
             type = "Red Perfect";
             break;
-        case "Yellow Divider":
+        case "Yellow Note":
             type = "Yellow Perfect";
             break;
-        case "Green Divider":
+        case "Green Note":
             type = "Green Perfect";
             break;
         default:
@@ -95,7 +105,7 @@ public class Note : MonoBehaviour
             break;
         }
 
-        if (other.CompareTag(this.tag)){
+        if (other.tag.ToLower().Contains(this.tag.Split(' ')[0].ToLower())){
             slicable = true;
         }
 
@@ -104,7 +114,9 @@ public class Note : MonoBehaviour
         }
         if (other.CompareTag("Player") && slicable == true) {
             Blade blade = other.GetComponent<Blade>();
-            Slice(blade.direction, blade.transform.position, blade.sliceForce);
+            if (points == 30)
+                Slice(blade.direction, blade.transform.position, blade.sliceForce, perfIcon);
+            else Slice(blade.direction, blade.transform.position, blade.sliceForce, goodIcon);
          }
 
     }
@@ -114,7 +126,7 @@ public class Note : MonoBehaviour
             points = 10;
         }
 
-        if (other.CompareTag(this.tag)){
+        if (other.tag.ToLower().Contains(this.tag.Split(' ')[0].ToLower())){
             slicable = false;
         }
     }
