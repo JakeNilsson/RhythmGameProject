@@ -108,7 +108,7 @@ public class Editor : MonoBehaviour
             {
                 string tag = result.gameObject.tag.ToLower();
 
-                if (tag == "editor note") {
+                if (tag.Contains("note")) {
                     Debug.Log("Deleting note");
 
                     notes = notes.Where(note => note.Item1 != result.gameObject).ToArray();
