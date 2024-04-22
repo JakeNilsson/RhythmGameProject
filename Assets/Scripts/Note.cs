@@ -82,7 +82,7 @@ public class Note : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(this.tag)){
+        if (other.tag.ToLower().Contains(this.tag.Split(' ')[0].ToLower())) {
             slicable = true;
         }
         if (other.CompareTag("Player") && slicable == true) {
@@ -93,7 +93,7 @@ public class Note : MonoBehaviour
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        if (other.CompareTag(this.tag)){
+        if (other.tag.ToLower().Contains(this.tag.Split(' ')[0].ToLower())){
             slicable = false;
         }
     }

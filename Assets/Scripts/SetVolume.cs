@@ -8,6 +8,8 @@ public class SetVolume : MonoBehaviour
 
     public AudioMixer songMixer;
 
+    public bool master = true;
+
     private void Awake()
     {
         if (instance == null)
@@ -22,7 +24,9 @@ public class SetVolume : MonoBehaviour
 
         songMixer.SetFloat("Volume", volume);
 
-        PlayerPrefs.SetFloat("Volume", sliderValue);
+        if (master) {
+            PlayerPrefs.SetFloat("Volume", sliderValue);
+        }
     }
 
     

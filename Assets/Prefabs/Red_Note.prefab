@@ -138,7 +138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4923841963621311964, guid: c521ea0b34270504ba5e5e475dc5f300, type: 3}
       propertyPath: m_TagString
-      value: Red Divider
+      value: Red Note
       objectReference: {fileID: 0}
     - target: {fileID: 5170521754609398893, guid: c521ea0b34270504ba5e5e475dc5f300, type: 3}
       propertyPath: m_Color.b

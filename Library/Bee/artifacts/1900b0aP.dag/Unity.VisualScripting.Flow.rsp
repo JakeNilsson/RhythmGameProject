@@ -98,7 +98,6 @@
 -define:NET_STANDARD_2_1
 -define:NETSTANDARD
 -define:NETSTANDARD2_1
--define:UNITY_PRO_LICENSE
 -define:ENABLE_CUSTOM_RENDER_TEXTURE
 -define:ENABLE_DIRECTOR
 -define:ENABLE_LOCALIZATION
@@ -106,8 +105,11 @@
 -define:ENABLE_TERRAIN
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
+-define:ENABLE_INPUT_SYSTEM
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
+-define:PACKAGE_INPUT_SYSTEM_EXISTS
+-define:PACKAGE_INPUT_SYSTEM_1_2_0_OR_NEWER_EXISTS
 -define:MODULE_AI_EXISTS
 -define:MODULE_ANIMATION_EXISTS
 -define:MODULE_PHYSICS_EXISTS
@@ -306,6 +308,7 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.19f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.XRModule.dll"
 -r:"Library/PackageCache/com.unity.collections@1.2.4/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll"
 -r:"Library/PackageCache/com.unity.visualscripting@1.9.1/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/1900b0aP.dag/Unity.InputSystem.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.VisualScripting.Core.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/UnityEngine.UI.ref.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.19f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"

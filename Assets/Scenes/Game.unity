@@ -732,7 +732,7 @@ GameObject:
   - component: {fileID: 105905198}
   - component: {fileID: 105905200}
   - component: {fileID: 105905199}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Yellow Perfect Divider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1348,18 +1348,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1550422649}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1632911382}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: resumeGame
@@ -1370,7 +1358,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &487712565
 MonoBehaviour:
@@ -1506,6 +1494,7 @@ RectTransform:
   m_Children:
   - {fileID: 558143120}
   - {fileID: 41939246}
+  - {fileID: 629722416}
   - {fileID: 1753955108}
   - {fileID: 1043140633}
   - {fileID: 580333822}
@@ -1514,7 +1503,6 @@ RectTransform:
   - {fileID: 1550422648}
   - {fileID: 922724174}
   - {fileID: 1532558264}
-  - {fileID: 629722416}
   - {fileID: 1632911381}
   - {fileID: 1297364666}
   m_Father: {fileID: 1739770146}
@@ -1617,7 +1605,7 @@ GameObject:
   - component: {fileID: 580333824}
   - component: {fileID: 580333823}
   - component: {fileID: 580333825}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Red Divider
   m_TagString: Red Divider
   m_Icon: {fileID: 0}
@@ -2135,7 +2123,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -2257,6 +2245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songMixer: {fileID: 24100000, guid: 7aabd657400d7c249b8efa9adb0a5573, type: 2}
+  master: 1
 --- !u!1 &1028389342
 GameObject:
   m_ObjectHideFlags: 0
@@ -2348,7 +2337,7 @@ GameObject:
   - component: {fileID: 1043140635}
   - component: {fileID: 1043140634}
   - component: {fileID: 1043140636}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Blue Divider
   m_TagString: Blue Divider
   m_Icon: {fileID: 0}
@@ -2448,10 +2437,10 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5625}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
@@ -3439,7 +3428,7 @@ GameObject:
   - component: {fileID: 1477589487}
   - component: {fileID: 1477589489}
   - component: {fileID: 1477589488}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Red Perfect Divider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3515,7 +3504,7 @@ GameObject:
   - component: {fileID: 1519656303}
   - component: {fileID: 1519656302}
   - component: {fileID: 1519656304}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Green Divider
   m_TagString: Green Divider
   m_Icon: {fileID: 0}
@@ -3539,7 +3528,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -306}
+  m_AnchoredPosition: {x: 0, y: -305}
   m_SizeDelta: {x: 1920, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1519656302
@@ -3637,7 +3626,7 @@ GameObject:
   - component: {fileID: 1530928665}
   - component: {fileID: 1530928664}
   - component: {fileID: 1530928666}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Blue Perfect Divider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3780,7 +3769,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -622}
+  m_AnchoredPosition: {x: 0, y: -620}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1532558266
@@ -3790,20 +3779,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532558263}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58011ab24b7bf564dacfa2a31b1d1090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   notePrefabs:
   - {fileID: 2204050786410081359, guid: b644e0c8c8149da4084b957194dec419, type: 3}
-  - {fileID: 2204050786410081359, guid: 53a3f2f4eddc0d043b96df98e3927e1d, type: 3}
   - {fileID: 2204050786410081359, guid: c0990c8065cabef41baef998dc4bb76e, type: 3}
   - {fileID: 2204050786410081359, guid: 78c91cf785cadee49904e1fce013ece2, type: 3}
-  minSpawnDelay: 0.5
-  maxSpawnDelay: 2.5
-  minAngle: -15
-  maxAngle: 15
+  - {fileID: 2204050786410081359, guid: 53a3f2f4eddc0d043b96df98e3927e1d, type: 3}
+  dividers:
+  - {fileID: 1043140632}
+  - {fileID: 580333821}
+  - {fileID: 2065941883}
+  - {fileID: 1519656300}
 --- !u!61 &1532558267
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3847,7 +3837,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1000, y: 1}
+  m_Size: {x: 960, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1550422647
 GameObject:
@@ -3944,18 +3934,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1550422649}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1632911382}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: pauseGame
@@ -3966,7 +3944,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1550422650
 MonoBehaviour:
@@ -4181,9 +4159,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comboText: {fileID: 558143121}
-  audioClips:
-  - {fileID: 8300000, guid: df728409641828b4eb94ab51175c6191, type: 3}
-  - {fileID: 8300000, guid: f992ecff90b10be46a9e481254e4cca4, type: 3}
   spawners:
   - {fileID: 1532558263}
 --- !u!1 &1643608914
@@ -4547,7 +4522,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1720643145}
   - component: {fileID: 1720643144}
-  - component: {fileID: 1720643143}
+  - component: {fileID: 1720643146}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -4555,26 +4530,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1720643143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720643142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &1720643144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4605,6 +4560,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1720643146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720643142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &1739770143
 GameObject:
   m_ObjectHideFlags: 0
@@ -4691,7 +4676,7 @@ Transform:
   m_GameObject: {fileID: 1739770143}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4796,7 +4781,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1860177465
 Canvas:
   m_ObjectHideFlags: 0
@@ -4807,7 +4792,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1739770145}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -4874,7 +4859,7 @@ GameObject:
   - component: {fileID: 1880776977}
   - component: {fileID: 1880776979}
   - component: {fileID: 1880776978}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Green Perfect Divider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5046,7 +5031,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 5.246652, y: 6.7242303}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!96 &2041063163
@@ -5088,8 +5073,8 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -385517667
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Time: 0.2
   m_PreviewTimeScale: 1
@@ -5174,7 +5159,7 @@ GameObject:
   - component: {fileID: 2065941886}
   - component: {fileID: 2065941885}
   - component: {fileID: 2065941887}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Yellow Divider
   m_TagString: Yellow Divider
   m_Icon: {fileID: 0}
