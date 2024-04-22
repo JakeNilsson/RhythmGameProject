@@ -28,6 +28,9 @@ public class Editor : MonoBehaviour
     [SerializeField] private GameObject[] dividers; // blue, red, yellow, green
 
     [SerializeField] private GameObject editorCanvas;
+
+    [SerializeField] private GameObject OptionsMenu;
+
     private GraphicRaycaster raycaster;
 
     PointerEventData clickData;
@@ -44,6 +47,8 @@ public class Editor : MonoBehaviour
 
     void Update()
     {
+        if (OptionsMenu.activeSelf) return;
+
         if (audioSource == null || audioSource.clip == null || timeText == null) return;
 
         if (audioSource.isPlaying)
