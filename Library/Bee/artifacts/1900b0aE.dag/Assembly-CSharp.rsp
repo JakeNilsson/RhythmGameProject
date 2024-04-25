@@ -117,6 +117,7 @@
 -define:ENABLE_TERRAIN
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
+-define:ENABLE_INPUT_SYSTEM
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
 -define:CSHARP_7_OR_LATER
@@ -329,6 +330,7 @@
 -r:"Library/PackageCache/com.unity.collections@1.2.4/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll"
 -r:"Library/PackageCache/com.unity.visualscripting@1.9.1/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/PsdPlugin.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/SimpleFileBrowser.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Animation.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Animation.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Aseprite.Common.ref.dll"
@@ -350,6 +352,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Burst.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Burst.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Collections.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InputSystem.ForUI.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InputSystem.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InternalAPIEditorBridge.001.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InternalAPIEditorBridge.005.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InternalAPIEngineBridge.001.ref.dll"
@@ -377,10 +381,14 @@
 "Assets/Scripts/Blade.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/GridManager.cs"
+"Assets/Scripts/LevelMenu.cs"
 "Assets/Scripts/MainMenu.cs"
+"Assets/Scripts/Mapping/Editor.cs"
+"Assets/Scripts/Mapping/EditorOptions.cs"
+"Assets/Scripts/Mapping/MappingMenu.cs"
+"Assets/Scripts/Mapping/PickMidi.cs"
 "Assets/Scripts/Note.cs"
 "Assets/Scripts/PauseMenu.cs"
-"Assets/Scripts/Scoring.cs"
 "Assets/Scripts/SetVolume.cs"
 "Assets/Scripts/Spawner.cs"
 "Assets/Scripts/Visualizer/AudioSpectrum.cs"

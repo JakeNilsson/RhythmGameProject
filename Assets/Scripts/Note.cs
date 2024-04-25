@@ -9,10 +9,11 @@ public class Note : MonoBehaviour
     public GameObject sliced;
     public GameObject perfIcon;
     public GameObject goodIcon;
-    public GameObject missIcon;
+    //public GameObject missIcon;
 
     private Rigidbody2D noteRigidbody;
     private Collider2D noteCollider;
+
     private Camera mainCamera;
 
     public int points = 10;
@@ -21,6 +22,7 @@ public class Note : MonoBehaviour
     private bool slicable = false;
     private string type;
 
+
     private void Awake() {
         noteRigidbody = GetComponent<Rigidbody2D>();
         noteCollider = GetComponent<Collider2D>();
@@ -28,7 +30,7 @@ public class Note : MonoBehaviour
 
         perfIcon.SetActive(false);
         goodIcon.SetActive(false);
-        missIcon.SetActive(false);
+        //missIcon.SetActive(false);
     }
 
     private void Update() {
@@ -53,7 +55,6 @@ public class Note : MonoBehaviour
         FindObjectOfType<GameManager>().IncreaseScore(points);
         FindObjectOfType<GameManager>().IncreaseCombo(1);
         
-        
         whole.SetActive(false);
         sliced.SetActive(true);
 
@@ -63,7 +64,7 @@ public class Note : MonoBehaviour
         sliced.transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
         Rigidbody2D[] slices = sliced.GetComponentsInChildren<Rigidbody2D>();
-        
+
 
         foreach (Rigidbody2D slice in slices) {
             slice.velocity = noteRigidbody.velocity;
@@ -81,8 +82,7 @@ public class Note : MonoBehaviour
         }
         GameObject iconType = Instantiate(icon, position, Quaternion.identity);
         iconType.SetActive(true);
-        Destroy(iconType, 2f);
-
+        Destroy(iconType, 1f);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -105,7 +105,7 @@ public class Note : MonoBehaviour
             break;
         }
 
-        if (other.tag.ToLower().Contains(this.tag.Split(' ')[0].ToLower())){
+        if (other.tag.ToLower().Contains(this.tag.Split(' ')[0].ToLower())) {
             slicable = true;
         }
 
@@ -125,7 +125,6 @@ public class Note : MonoBehaviour
         if (other.CompareTag(type)) {
             points = 10;
         }
-
         if (other.tag.ToLower().Contains(this.tag.Split(' ')[0].ToLower())){
             slicable = false;
         }

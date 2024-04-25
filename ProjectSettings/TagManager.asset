@@ -9,6 +9,11 @@ TagManager:
   - Yellow Divider
   - Green Divider
   - Spawner
+  - Blue Note
+  - Red Note
+  - Yellow Note
+  - Green Note
+  - Editor Note
   - Blue Perfect
   - Red Perfect
   - Yellow Perfect
@@ -49,4 +54,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Blade
+    uniqueID: 3909449629
+    locked: 0
+  - name: Background
+    uniqueID: 135834965
     locked: 0

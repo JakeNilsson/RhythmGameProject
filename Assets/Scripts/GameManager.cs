@@ -1,4 +1,7 @@
+using System;
+using System.IO;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -7,7 +10,7 @@ public class GameManager : MonoBehaviour
     public Text comboText;
     public Text scoreText;
 
-    public AudioClip[] audioClips;
+    //public AudioClip[] audioClips;
 
     public GameObject[] spawners;
 
@@ -19,11 +22,19 @@ public class GameManager : MonoBehaviour
     private float songLength;
 
     private bool started = false;
-
     
+    private UnityWebRequest GetAudioFromFile(string path)
+    {
+        UnityWebRequest request = UnityWebRequestMultimedia.GetAudioClip("file://" + path, AudioType.MPEG);
+        request.SendWebRequest();
+
+        // wait for the request to finish
+        while (!request.isDone) { }
+
+        return request;
+    }
 
     private void Start() {
-
         if (spawners.Length == 0) {
             Debug.LogError("Spawners are not set in the GameManager");
         }
@@ -31,27 +42,53 @@ public class GameManager : MonoBehaviour
         if (comboText == null) {
             Debug.LogError("Combo Text is not set in the GameManager");
         }
-
         if (scoreText == null) {
             Debug.LogError("Score Text is not set in the GameManager");
         }
-        else if (audioClips.Length == 0) {
-            Debug.LogError("Audio Clips are not set in the GameManager");
-        }
-
         audioSource = FindObjectOfType<AudioSource>();
         if (audioSource == null) {
             Debug.LogError("Audio Source is not found in the GameManager");
         }
-        else {
-            AudioClip audioClip = audioClips[GridManager.currentLevel - 1];
-            audioSource.clip = audioClips[GridManager.currentLevel - 1];
-            audioSource.loop = false;
-            audioSource.playOnAwake = false;
-            songLength = audioClip.length;
+
+        String path = Path.Combine(Application.persistentDataPath, "Levels");
+
+        String[] directories = Directory.GetDirectories(path);
+
+        if (directories.Length < GridManager.currentLevel) {
+            Debug.LogError("No levels found in the Levels folder");
+        }
+        
+        String levelPath = directories[GridManager.currentLevel - 1];
+
+        String[] files = Directory.GetFiles(levelPath);
+
+        if (files.Length == 0) {
+            Debug.LogError("No files found in the level folder");
         }
 
-        if (comboText != null && audioClips.Length > 0 && audioSource != null && spawners.Length > 0) {
+        // get the mp3 file
+        String mp3File = Array.Find(files, file => file.EndsWith(".mp3"));
+
+        if (mp3File == null) {
+            Debug.LogError("No mp3 file found in the level folder");
+        }
+
+
+        UnityWebRequest request = GetAudioFromFile(mp3File);
+
+        AudioClip audioClip = DownloadHandlerAudioClip.GetContent(request);
+
+        audioClip.name = Path.GetFileNameWithoutExtension(mp3File);
+
+        audioSource.clip = audioClip;
+        
+        // AudioClip audioClip = audioClips[GridManager.currentLevel - 1];
+        // audioSource.clip = audioClips[GridManager.currentLevel - 1];
+        audioSource.loop = false;
+        audioSource.playOnAwake = false;
+        songLength = audioClip.length;
+
+        if (comboText != null && audioSource != null && spawners.Length > 0) {
             NewGame();
         }
     }
@@ -66,6 +103,11 @@ public class GameManager : MonoBehaviour
         // wait 3 seconds and then enable the spawners
         // Invoke("EnableSpawners", 3f);
         started = true;
+
+        // set the audio source for the spawner
+        Spawner.audioSource = audioSource;
+        // activate the first spawner
+        spawners[0].GetComponent<Spawner>().enabled = true;
     }
 
     // private void EnableSpawners() {
@@ -94,6 +136,7 @@ public class GameManager : MonoBehaviour
     public void resumeGame() {
         Time.timeScale = 1;
         audioSource.Play();
+        //spawners[0].GetComponent<Spawner>().enabled = true;
     }
 
     public void endGame() {
@@ -112,7 +155,6 @@ public class GameManager : MonoBehaviour
         combo = 0;
         comboText.text = "Combo\n" + combo.ToString();
     }
-
     public void IncreaseScore(int score) {
         this.score += score;
         scoreText.text = "Score\n" + this.score.ToString();

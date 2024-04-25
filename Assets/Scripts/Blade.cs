@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Blade : MonoBehaviour
 {
@@ -31,20 +32,26 @@ public class Blade : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) {
+        if (Mouse.current.leftButton.wasPressedThisFrame) {
+            Debug.Log("Start Slicing");
             StartSlicing();
-        } else if (Input.GetMouseButtonUp(0)) {
+        } else if (Mouse.current.leftButton.wasReleasedThisFrame) {
+            Debug.Log("Stop Slicing");
             StopSlicing();
         } else if (slicing) {
+            Debug.Log("Continue Slicing");
             ContinueSlicing();
         }
     }
 
     private void StartSlicing() {
-        Vector3 newPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        newPosition.z = 0f;
+        //Vector3 newPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 newPosition = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
         transform.position = newPosition;
+        Vector3 localPosition = transform.localPosition;
+        localPosition.z = 0f;
+        transform.localPosition = localPosition;
 
         slicing = true;
         bladeCollider.enabled = true;
@@ -59,7 +66,8 @@ public class Blade : MonoBehaviour
     }
 
     private void ContinueSlicing() {
-        Vector3 newPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        //Vector3 newPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 newPosition = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         newPosition.z = 0f;
 
         direction = newPosition - transform.position;
@@ -68,5 +76,8 @@ public class Blade : MonoBehaviour
         bladeCollider.enabled = velocity > minSliceVelocity;
 
         transform.position = newPosition;
+        Vector3 localPosition = transform.localPosition;
+        localPosition.z = 0f;
+        transform.localPosition = localPosition;
     }
 }
