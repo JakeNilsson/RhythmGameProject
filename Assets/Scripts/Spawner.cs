@@ -39,7 +39,7 @@ public class Spawner : MonoBehaviour {
         LoadNotes();
         StartCoroutine(Spawn());
 
-        //StartCoroutine(testSpawn());
+        StartCoroutine(testSpawn());
     }
 
     private void OnDisable() {
@@ -135,8 +135,8 @@ public class Spawner : MonoBehaviour {
 
             float timeToTarget = 2.0f;
 
-            float velocityX = direction.x / timeToTarget;
-            float velocityY = (direction.y + 0.5f * gravity * timeToTarget * timeToTarget) / timeToTarget;
+            float velocityX = direction.x / timeToTarget - 0.05f;
+            float velocityY = (direction.y + 0.5f * gravity * timeToTarget * timeToTarget) / timeToTarget - 0.05f;
 
             // calculate the time to wait before spawning the note
             float waitTime = notes[currentNote].Item2 - audioSource.time - 2.0f;

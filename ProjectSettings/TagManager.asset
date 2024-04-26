@@ -14,6 +14,10 @@ TagManager:
   - Yellow Note
   - Green Note
   - Editor Note
+  - Blue Perfect
+  - Red Perfect
+  - Yellow Perfect
+  - Green Perfect
   layers:
   - Default
   - TransparentFX

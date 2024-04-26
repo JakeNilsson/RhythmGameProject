@@ -7,21 +7,30 @@ public class Note : MonoBehaviour
 {
     public GameObject whole;
     public GameObject sliced;
+    public GameObject perfIcon;
+    public GameObject goodIcon;
+    //public GameObject missIcon;
 
     private Rigidbody2D noteRigidbody;
     private Collider2D noteCollider;
 
     private Camera mainCamera;
 
-    public int points = 1;
+    public int points = 10;
 
     private bool isOffScreen;
     private bool slicable = false;
+    private string type;
+
 
     private void Awake() {
         noteRigidbody = GetComponent<Rigidbody2D>();
         noteCollider = GetComponent<Collider2D>();
         mainCamera = Camera.main;
+
+        perfIcon.SetActive(false);
+        goodIcon.SetActive(false);
+        //missIcon.SetActive(false);
     }
 
     private void Update() {
@@ -42,8 +51,9 @@ public class Note : MonoBehaviour
 
 
 
-    private void Slice(Vector3 direction, Vector3 position, float force) {
-        FindObjectOfType<GameManager>().IncreaseCombo(points);
+    private void Slice(Vector3 direction, Vector3 position, float force, GameObject icon) {
+        FindObjectOfType<GameManager>().IncreaseScore(points);
+        FindObjectOfType<GameManager>().IncreaseCombo(1);
         
         whole.SetActive(false);
         sliced.SetActive(true);
@@ -55,14 +65,6 @@ public class Note : MonoBehaviour
 
         Rigidbody2D[] slices = sliced.GetComponentsInChildren<Rigidbody2D>();
 
-        // Calculate the center height of the circle
-       // float circleCenterHeight = transform.position.y;
-
-        // Calculate the center height of the box
-        //float boxCenterHeight = boxCollider.bounds.center.y;
-
-        // Calculate the distance between the center heights
-        //float centerHeightDistance = Mathf.Abs(circleCenterHeight - boxCenterHeight);
 
         foreach (Rigidbody2D slice in slices) {
             slice.velocity = noteRigidbody.velocity;
@@ -78,21 +80,51 @@ public class Note : MonoBehaviour
 
             slice.AddForceAtPosition(dir2 * force, pos2, ForceMode2D.Impulse);
         }
+        GameObject iconType = Instantiate(icon, position, Quaternion.identity);
+        iconType.SetActive(true);
+        Destroy(iconType, 1f);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        switch (this.tag){
+        case "Blue Note":
+            type = "Blue Perfect";
+            break;
+        case "Red Note":
+            type = "Red Perfect";
+            break;
+        case "Yellow Note":
+            type = "Yellow Perfect";
+            break;
+        case "Green Note":
+            type = "Green Perfect";
+            break;
+        default:
+            Debug.LogError("Default Error");
+            break;
+        }
+
         if (other.tag.ToLower().Contains(this.tag.Split(' ')[0].ToLower())) {
             slicable = true;
         }
+
+        if (other.CompareTag(type)){
+            points = 30;
+        }
         if (other.CompareTag("Player") && slicable == true) {
             Blade blade = other.GetComponent<Blade>();
-            Slice(blade.direction, blade.transform.position, blade.sliceForce);
+            if (points == 30)
+                Slice(blade.direction, blade.transform.position, blade.sliceForce, perfIcon);
+            else Slice(blade.direction, blade.transform.position, blade.sliceForce, goodIcon);
          }
 
     }
 
     private void OnTriggerExit2D(Collider2D other) {
+        if (other.CompareTag(type)) {
+            points = 10;
+        }
         if (other.tag.ToLower().Contains(this.tag.Split(' ')[0].ToLower())){
             slicable = false;
         }
