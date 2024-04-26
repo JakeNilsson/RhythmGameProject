@@ -39,7 +39,7 @@ public class Spawner : MonoBehaviour {
         LoadNotes();
         StartCoroutine(Spawn());
 
-        StartCoroutine(testSpawn());
+        //StartCoroutine(testSpawn());
     }
 
     private void OnDisable() {

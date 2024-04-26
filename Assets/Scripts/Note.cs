@@ -28,6 +28,7 @@ public class Note : MonoBehaviour
         noteCollider = GetComponent<Collider2D>();
         mainCamera = Camera.main;
 
+        //set good and perfect icons inactive so they are not visible before slicing
         perfIcon.SetActive(false);
         goodIcon.SetActive(false);
         //missIcon.SetActive(false);
@@ -52,7 +53,9 @@ public class Note : MonoBehaviour
 
 
     private void Slice(Vector3 direction, Vector3 position, float force, GameObject icon) {
+        //Increase Score by points (10 or 30 depending on perfect or good)
         FindObjectOfType<GameManager>().IncreaseScore(points);
+        //Increase combo by 1 only
         FindObjectOfType<GameManager>().IncreaseCombo(1);
         
         whole.SetActive(false);
@@ -80,6 +83,7 @@ public class Note : MonoBehaviour
 
             slice.AddForceAtPosition(dir2 * force, pos2, ForceMode2D.Impulse);
         }
+        //show icon of matching slice type where not was sliced, then destroy it to prevent clutter
         GameObject iconType = Instantiate(icon, position, Quaternion.identity);
         iconType.SetActive(true);
         Destroy(iconType, 1f);
@@ -87,6 +91,7 @@ public class Note : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        //switch to set type to matching color perfect
         switch (this.tag){
         case "Blue Note":
             type = "Blue Perfect";
@@ -104,27 +109,31 @@ public class Note : MonoBehaviour
             Debug.LogError("Default Error");
             break;
         }
-
+        //if the tag of the collider containing the same color as the note is overlapping the with the note, the note is sliceable
         if (other.tag.ToLower().Contains(this.tag.Split(' ')[0].ToLower())) {
             slicable = true;
         }
-
+        ////check if the note has crossed its matching color perfect threshold, increase points to 30
         if (other.CompareTag(type)){
             points = 30;
         }
         if (other.CompareTag("Player") && slicable == true) {
             Blade blade = other.GetComponent<Blade>();
+            //if points are 30 then slice using perfect icon
             if (points == 30)
                 Slice(blade.direction, blade.transform.position, blade.sliceForce, perfIcon);
+            //else slice using good icon
             else Slice(blade.direction, blade.transform.position, blade.sliceForce, goodIcon);
          }
 
     }
 
     private void OnTriggerExit2D(Collider2D other) {
+        //if perfect collider no longer overlapping note, points are only 10
         if (other.CompareTag(type)) {
             points = 10;
         }
+        //if no note no longer overlapping its matching color zone, note is not sliceable
         if (other.tag.ToLower().Contains(this.tag.Split(' ')[0].ToLower())){
             slicable = false;
         }
