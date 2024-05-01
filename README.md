@@ -1,0 +1,3 @@
+Tempo Toss is a 2D OSU/Fruit Ninja styled mapping tool that allows a user to create mappings for songs. Included in these project files is a test song, doome1e1a, that is a short song to map for. Once in the mapping tool, you can path to the songs location in the Assets/Songs/ folder of the project using the file browser. When mapping, you can select where notes will fly up to during the song. Once satisfied with the map, you can hit export and it will appear in the level select. After playing through the song, your score will be shown alongside the highest combo gained during play time.
+
+We have also included the compiled build in the folder "TempoToss Build" that contains the executable file of the game.
