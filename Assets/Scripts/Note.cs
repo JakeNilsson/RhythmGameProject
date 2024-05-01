@@ -57,6 +57,8 @@ public class Note : MonoBehaviour
         FindObjectOfType<GameManager>().IncreaseScore(points);
         //Increase combo by 1 only
         FindObjectOfType<GameManager>().IncreaseCombo(1);
+        //Increase notes hit by 1
+        FindObjectOfType<GameManager>().NoteHit();
         
         whole.SetActive(false);
         sliced.SetActive(true);

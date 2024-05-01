@@ -36,10 +36,9 @@ public class GridManager : MonoBehaviour
         {
             int level = i + 1;
             Button button = Instantiate(buttonPrefab, transform);
-            //button.name = $"Level {level}";
-            //button.GetComponentInChildren<Text>().text = $"Level {level}";
-            button.name = directories[i];
-            button.GetComponentInChildren<Text>().text = directories[i];
+            string truncatedName = directories[i].Length > 8 ? directories[i].Substring(0, 8) : directories[i];
+            button.name = truncatedName;
+            button.GetComponentInChildren<Text>().text = truncatedName;
             button.onClick.AddListener(() => LoadLevel(level));
         }
     }

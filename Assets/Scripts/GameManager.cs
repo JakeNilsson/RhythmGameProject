@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
@@ -10,12 +11,16 @@ public class GameManager : MonoBehaviour
     public Text comboText;
     public Text scoreText;
 
+    public EndScreen endScreen;
+
     //public AudioClip[] audioClips;
 
     public GameObject[] spawners;
 
     private int combo;
     private int score;
+
+    private int totalNotesHit;
 
     private AudioSource audioSource;
 
@@ -97,6 +102,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         combo = 0;
         score = 0;
+        totalNotesHit = 0;
         comboText.text = "Combo\n" + combo.ToString();
         scoreText.text = "Score\n" + score.ToString();
         audioSource.Play();
@@ -143,7 +149,19 @@ public class GameManager : MonoBehaviour
         audioSource.Stop();
         // DisableSpawners();
         started = false;
-        SceneManager.LoadScene("Main Menu"); // TODO: Change to Game Over Scene
+
+        if (endScreen != null)
+        {
+            endScreen.Show(totalNotesHit, combo, score);
+        }
+
+        StartCoroutine(LoadMainMenuAfterDelay(5)); // wait for 5 seconds
+    }
+
+    private IEnumerator LoadMainMenuAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("Main Menu");
     }
 
     public void IncreaseCombo(int combo) {
@@ -158,5 +176,15 @@ public class GameManager : MonoBehaviour
     public void IncreaseScore(int score) {
         this.score += score;
         scoreText.text = "Score\n" + this.score.ToString();
+    }
+
+    public void NoteHit()
+    {
+        totalNotesHit++;
+    }
+
+    public int GetTotalNotesHit()
+    {
+        return totalNotesHit;
     }
 }
